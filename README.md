@@ -57,9 +57,3 @@
 </picture>
 
 ###
-
-<div align="center">
-  <img height="150" src="https://media.tenor.com/aNHKkEhomm4AAAAC/anime-keyboard.gif"  />
-</div>
-
-###
