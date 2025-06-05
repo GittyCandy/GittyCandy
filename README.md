@@ -4,7 +4,7 @@
 ###
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=7A3FF7&center=true&vCenter=true&width=435&lines=Python+Enthusiast;Cloud+Developer;Open+Source+Contributor;Tech+Explorer" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=7A3FF7&center=true&vCenter=true&width=435&lines=Python+Enthusiast;Open+Source+Contributor;Tech+Explorer" alt="Typing SVG" />
 </div>
 
 ###
@@ -63,4 +63,4 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GittyCandy/GittyCandy/output/github-snake.svg" />
   <img alt="github-snake" src="https://raw.githubusercontent.com/GittyCandy/GittyCandy/output/github-snake.svg" />
 </picture>
-###
+
