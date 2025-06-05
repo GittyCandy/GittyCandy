@@ -1,42 +1,46 @@
-name: GitHub Snake Game
+name: 🐍 GitHub Contributions Snake Game
 
 on:
-  # Schedule the workflow to run daily at midnight UTC
+  # 🔁 Runs every day at midnight UTC
   schedule:
     - cron: "0 0 * * *"
-  # Allow manual triggering of the workflow
+
+  # 🚀 Allows manual trigger from GitHub UI
   workflow_dispatch:
-  # Trigger the workflow on pushes to the main branch
+
+  # 📦 Also trigger on push to main
   push:
     branches:
       - main
+
 jobs:
-  generate:
+  generate-snake:
+    name: 🎨 Generate Snake Animation
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Repository
+      # 📥 Step 1: Clone the repo
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v3
-      # Step 2: Generate the snake animations
-      - name: Generate GitHub Contributions Snake Animations
+
+      # 🐍 Step 2: Generate Snake Animation
+      - name: 🐍 Generate GitHub Snake Animation
         uses: Platane/snk@v3
         with:
-          # GitHub username to generate the animation for
           github_user_name: ${{ github.repository_owner }}
-          # Define the output files and their configurations
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            dist/github-snake-ocean.svg?color_snake=#FFA500&color_dots=#BFD6F6,#8DBDFF,#64A1F4,#4B91F1,#3C7DD9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Step 3: Deploy the generated files to the 'output' branch
-      - name: Deploy to Output Branch
+
+      # 🚀 Step 3: Push results to output branch
+      - name: 🚀 Deploy Snake Animation to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          # Optionally, you can set a custom commit message
-          commit_message: "Update snake animation [skip ci]"
+          commit_message: "📦 Update snake animation [skip ci]"
