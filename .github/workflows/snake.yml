@@ -1,45 +1,102 @@
-name: 🐍 GitHub Snake Animator 🚀
+# --------------------------------------------------------------------
+# 🎮 GitHub Snake Game Generator
+# --------------------------------------------------------------------
+# - Generates a daily snake animation (SVG + GIF) based on your
+#   GitHub contributions.
+# - Outputs include light/dark SVGs, a vibrant ocean-themed GIF,
+#   plus a fun “rainbow” and “neon” version for extra flair.
+# - Automatically deploys everything to the `output` branch.
+# --------------------------------------------------------------------
 
+name: "🎉 GitHub Snake Game Generator"
+
+# --------------------------------------------------------------------
+# Triggers:
+#  • schedule: runs daily at midnight UTC
+#  • workflow_dispatch: manual trigger from Actions tab
+#  • push: runs when there’s a commit to main
+# --------------------------------------------------------------------
 on:
   schedule:
-    - cron: "0 0 * * *"  # Daily at midnight UTC
-  workflow_dispatch:     # Manual trigger
+    - cron: "0 0 * * *"   # Every day at 00:00 UTC
+  workflow_dispatch:      # Allow manual “Run workflow” in Actions
   push:
     branches:
       - main
 
+# --------------------------------------------------------------------
+# Prevent overlapping runs: cancel any previous in-flight jobs
+# --------------------------------------------------------------------
+concurrency:
+  group: snake-generator
+  cancel-in-progress: true
+
 jobs:
-  generate-snake:
+  generate-and-publish:
+    name: "🚀 Generate & Publish Snake Animations"
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
     steps:
-      - name: 🛠️ Checkout Repository
-        uses: actions/checkout@v4
-        
-      - name: 🌈 Generate Snake Animation
+      # ----------------------------------------------------------------
+      # Step 1: Checkout your repo so we have access to .github/workflows
+      # ----------------------------------------------------------------
+      - name: "🔄 Checkout Repository"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      # ----------------------------------------------------------------
+      # Step 2: Generate snake animations via Platane/snk
+      # ----------------------------------------------------------------
+      - name: "🕹️ Generate Snake Animations"
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-            dist/snake-rainbow.gif?color_snake=linear-gradient(#ff0000,#ff8000,#ffff00,#80ff00,#00ff00,#00ff80,#00ffff,#0080ff,#0000ff,#8000ff,#ff00ff,#ff0080)&color_dots=#ff9999,#ffcc99,#ffff99,#ccff99,#99ff99,#99ffcc,#99ffff,#99ccff,#9999ff,#cc99ff,#ff99ff,#ff99cc
-            dist/snake-ocean-wave.gif?color_snake=linear-gradient(#1a2980,#26d0ce)&color_dots=#a8e6cf,#dcedc1,#ffd3b6,#ffaaa5,#ff8b94
-            dist/snake-github-special.gif?color_snake=linear-gradient(#6e5494,#4078c0,#6cc644)&color_dots=#bd2c00,#c9510c,#6cc644,#4078c0,#6e5494
+            # Light-mode SVG (standard GitHub palette)
+            dist/github-snake.svg
+
+            # Dark-mode SVG (GitHub dark palette)
+            dist/github-snake-dark.svg?palette=github-dark
+
+            # Ocean-themed GIF (orange snake + cool blue dots)
+            dist/ocean.gif?color_snake=orange&color_dots=%23bfd6f6,%238dbdff,%2364a1f4,%234b91f1,%233c7dd9
+
+            # Rainbow GIF (rainbow snake + white dots)
+            dist/rainbow.gif?color_snake=rainbow&color_dots=%23ffffff
+
+            # Neon GIF (electric green snake + neon pink dots, slower speed)
+            dist/neon.gif?color_snake=%2300FF00&color_dots=%23FF00FF&frame_delay=80
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 🚀 Deploy Snake Animation
+
+      # ----------------------------------------------------------------
+      # Step 3: Confirm generated files exist (optional sanity check)
+      # ----------------------------------------------------------------
+      - name: "✅ Verify Generated Files"
+        run: |
+          echo "Listing contents of dist/:"
+          ls -al dist
+          echo "SHA sums for each file:"
+          sha256sum dist/* || true
+
+      # ----------------------------------------------------------------
+      # Step 4: Deploy everything under dist/ to the output branch
+      # ----------------------------------------------------------------
+      - name: "📦 Deploy to output Branch"
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          commit_message: "🔄 Updated snake animation - $(date +'%Y-%m-%d') [skip ci]"
-          full_commit_message: "🎨 Updated GitHub Contribution Snake with new visual effects and colors! [skip ci]"
-          
-      - name: 📢 Notify Success
-        if: success()
-        run: |
-          echo "🐍 Awesome! Your GitHub Snake animation has been updated with fresh new looks!"
-          echo "Check it out at: https://github.com/${{ github.repository_owner }}/${{ github.repository }}/blob/output/"
+          # Include a timestamp in the commit message for easier tracking
+          commit_message: |
+            Update snake animations at $(date -u +"%Y-%m-%dT%H:%M:%SZ") [skip ci]
+
+      # ----------------------------------------------------------------
+      # Step 5: Success Confirmation (logs will show up in Actions)
+      # ----------------------------------------------------------------
+      - name: "🎉 Done!"
+        run: echo "Snake animations generated and deployed successfully."
