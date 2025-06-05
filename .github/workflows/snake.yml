@@ -1,46 +1,45 @@
-name: 🐍 GitHub Contributions Snake Game
+name: 🐍 GitHub Snake Animator 🚀
 
 on:
-  # 🔁 Runs every day at midnight UTC
   schedule:
-    - cron: "0 0 * * *"
-
-  # 🚀 Allows manual trigger from GitHub UI
-  workflow_dispatch:
-
-  # 📦 Also trigger on push to main
+    - cron: "0 0 * * *"  # Daily at midnight UTC
+  workflow_dispatch:     # Manual trigger
   push:
     branches:
       - main
 
 jobs:
   generate-snake:
-    name: 🎨 Generate Snake Animation
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
     steps:
-      # 📥 Step 1: Clone the repo
-      - name: 📥 Checkout Repository
-        uses: actions/checkout@v3
-
-      # 🐍 Step 2: Generate Snake Animation
-      - name: 🐍 Generate GitHub Snake Animation
+      - name: 🛠️ Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🌈 Generate Snake Animation
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/github-snake-ocean.svg?color_snake=#FFA500&color_dots=#BFD6F6,#8DBDFF,#64A1F4,#4B91F1,#3C7DD9
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/snake-rainbow.gif?color_snake=linear-gradient(#ff0000,#ff8000,#ffff00,#80ff00,#00ff00,#00ff80,#00ffff,#0080ff,#0000ff,#8000ff,#ff00ff,#ff0080)&color_dots=#ff9999,#ffcc99,#ffff99,#ccff99,#99ff99,#99ffcc,#99ffff,#99ccff,#9999ff,#cc99ff,#ff99ff,#ff99cc
+            dist/snake-ocean-wave.gif?color_snake=linear-gradient(#1a2980,#26d0ce)&color_dots=#a8e6cf,#dcedc1,#ffd3b6,#ffaaa5,#ff8b94
+            dist/snake-github-special.gif?color_snake=linear-gradient(#6e5494,#4078c0,#6cc644)&color_dots=#bd2c00,#c9510c,#6cc644,#4078c0,#6e5494
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # 🚀 Step 3: Push results to output branch
-      - name: 🚀 Deploy Snake Animation to Output Branch
+          
+      - name: 🚀 Deploy Snake Animation
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          commit_message: "📦 Update snake animation [skip ci]"
+          commit_message: "🔄 Updated snake animation - $(date +'%Y-%m-%d') [skip ci]"
+          full_commit_message: "🎨 Updated GitHub Contribution Snake with new visual effects and colors! [skip ci]"
+          
+      - name: 📢 Notify Success
+        if: success()
+        run: |
+          echo "🐍 Awesome! Your GitHub Snake animation has been updated with fresh new looks!"
+          echo "Check it out at: https://github.com/${{ github.repository_owner }}/${{ github.repository }}/blob/output/"
