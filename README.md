@@ -4,7 +4,7 @@
 ###
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=7A3FF7&center=true&vCenter=true&width=435&lines=Python+Enthusiast;Open+Source+Contributor;Tech+Explorer" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=7A3FF7&center=true&vCenter=true&width=600&lines=Cybersecurity+Major+%7C+Ethical+Hacker;AI+and+LLM+Practitioner;Python+Developer+%7C+Automation+Builder;Open+Source+Contributor+%7C+Project+Driven;DevOps+Learner;Passionate+about+Tech+%7C+Always+Exploring" alt="Typing SVG" />
 </div>
 
 ###
