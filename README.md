@@ -5,9 +5,8 @@
 </h1>
 
 <h3 align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  🔮 <span style="color: #7A3FF7">Cyber Alchemist</span> | 🤖 <span style="color: #00D1B2">AI Whisperer</span> | 🛠️ <span style="color: #F7DF1E">Full-Stack Sorcerer</span>
+  🔮 <span style="color: #7A3FF7">Cyber Alchemist</span> | 🤖 <span style="color: #FF6B6B">AI Whisperer</span> | 🛠️ <span style="color: #B362FF">Full-Stack Sorcerer</span>
 </h3>
-
 
 ###
 
@@ -22,63 +21,65 @@
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=GittyCandy&label=PROFILE+VIEWS&color=7a3ff7&style=for-the-badge" alt="GittyCandy" /> 
   <a href="https://github.com/GittyCandy?tab=followers">
-    <img src="https://img.shields.io/github/followers/GittyCandy?label=FOLLOWERS&style=for-the-badge&color=7a3ff7" alt="GitHub Followers">
+    <img src="https://img.shields.io/github/followers/GittyCandy?label=FOLLOWERS&style=for-the-badge&color=FF6B6B" alt="GitHub Followers">
   </a>
-  <img src="https://img.shields.io/badge/PRs-WELCOME-7a3ff7?style=for-the-badge" alt="PRs Welcome">
+  <img src="https://img.shields.io/badge/PRs-WELCOME-B362FF?style=for-the-badge" alt="PRs Welcome">
 </div>
 
-## 🔧 Tech Stack & Tools
+## 🌈 Tech Stack & Tools
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=py" height="60" alt="python logo"  />
+  <img src="https://skillicons.dev/icons?i=py" height="60" alt="python logo" style="filter: hue-rotate(0deg) saturate(2)" />
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=aws" height="60" alt="amazonwebservices logo"  />
+  <img src="https://skillicons.dev/icons?i=aws" height="60" alt="amazonwebservices logo" style="filter: hue-rotate(0deg) saturate(2)" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="60" alt="nodejs logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="60" alt="nodejs logo" style="filter: hue-rotate(-30deg) saturate(1.5)" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="60" alt="javascript logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="60" alt="javascript logo" style="filter: hue-rotate(0deg) saturate(2)" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="60" alt="java logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="60" alt="java logo" style="filter: hue-rotate(20deg) saturate(1.5)" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="60" alt="npm logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="60" alt="npm logo" style="filter: hue-rotate(-10deg) saturate(2)" />
+</div>
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="60" alt="arduino logo" style="filter: hue-rotate(10deg) saturate(1.8)" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="60" alt="arduino logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" height="60" alt="jupyter logo" style="filter: hue-rotate(-20deg) saturate(1.5)" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" height="60" alt="jupyter logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" height="60" alt="kotlin logo" style="filter: hue-rotate(30deg) saturate(1.8)" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" height="60" alt="kotlin logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="60" alt="react logo" style="filter: hue-rotate(-15deg) saturate(1.7)" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="60" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="60" alt="cplusplus logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="60" alt="mongodb logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="60" alt="mysql logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="60" alt="cplusplus logo" style="filter: hue-rotate(5deg) saturate(1.6)" />
 </div>
 
 ### 📊 GitHub Stats
 
 <div align="center">
-  <img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=GittyCandy&layout=compact&theme=radical&hide_border=true&langs_count=10&custom_title=Most+Used+Languages" />
+  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=GittyCandy&show_icons=true&theme=radical&hide_border=true&bg_color=00000000&title_color=7A3FF7&icon_color=FF6B6B&text_color=B362FF" />
+  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=GittyCandy&theme=radical&hide_border=true&background=00000000&stroke=B362FF&ring=7A3FF7&fire=FF6B6B&currStreakNum=B362FF&sideNums=7A3FF7&currStreakLabel=FF6B6B" />
 </div>
 
+<div align="center">
+  <img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=GittyCandy&layout=compact&theme=radical&hide_border=true&langs_count=10&bg_color=00000000&title_color=7A3FF7&text_color=B362FF" />
+</div>
 
 ---
 
 ### 📫 Let's Connect
 <div align="center">
   <a href="https://linkedin.com/in/yourprofile" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img src="https://img.shields.io/badge/LinkedIn-7A3FF7?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="https://twitter.com/yourhandle" target="_blank">
-    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
+    <img src="https://img.shields.io/badge/Twitter-FF6B6B?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
   </a>
   <a href="https://discord.gg/yourinvite" target="_blank">
-    <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/>
+    <img src="https://img.shields.io/badge/Discord-B362FF?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/>
   </a>
   <a href="mailto:youremail@example.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
+    <img src="https://img.shields.io/badge/Gmail-7A3FF7?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
   </a>
 </div>
 
@@ -93,8 +94,6 @@
   <img alt="github-snake" src="https://raw.githubusercontent.com/GittyCandy/GittyCandy/output/github-snake.svg" />
 </picture>
 </div>
-
-
 
 <p align="center"> 
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&animation=twinkling" alt="Footer"/>
