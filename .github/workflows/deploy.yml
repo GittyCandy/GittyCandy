@@ -33,24 +33,6 @@ jobs:
           
       - name: Convert README to HTML
         run: |
-          # Create minimal template if it doesn't exist
-          if [ ! -f template.html ]; then
-            echo '<!DOCTYPE html>
-            <html>
-            <head>
-              <meta charset="UTF-8">
-              <title>GitHub Profile</title>
-              <style>
-                /* CSS will be injected here */
-                {{STYLES}}
-              </style>
-            </head>
-            <body>
-              {{CONTENT}}
-            </body>
-            </html>' > template.html
-          fi
-          
           python -c "
           import markdown
           import re
