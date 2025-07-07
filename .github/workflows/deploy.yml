@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Profile to GitHub Pages
 
 on:
   push:
@@ -6,9 +6,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -17,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
@@ -29,17 +33,68 @@ jobs:
           
       - name: Convert README to HTML
         run: |
+          # Create minimal template if it doesn't exist
+          if [ ! -f template.html ]; then
+            echo '<!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="UTF-8">
+              <title>GitHub Profile</title>
+              <style>
+                /* CSS will be injected here */
+                {{STYLES}}
+              </style>
+            </head>
+            <body>
+              {{CONTENT}}
+            </body>
+            </html>' > template.html
+          fi
+          
           python -c "
           import markdown
-          with open('README.md', 'r') as f:
+          import re
+          
+          # Read README
+          with open('README.md', 'r', encoding='utf-8') as f:
               text = f.read()
+          
+          # Extract CSS from style tags
+          css = ''
+          style_matches = re.findall(r'<style>(.*?)</style>', text, re.DOTALL)
+          if style_matches:
+              css = style_matches[0]
+          
+          # Convert markdown to HTML
           html = markdown.markdown(text, extensions=['fenced_code', 'tables'])
-          with open('index_template.html', 'r') as f:
+          
+          # Read template
+          with open('template.html', 'r', encoding='utf-8') as f:
               template = f.read()
-          final_html = template.replace('{{CONTENT}}', html)
-          with open('index.html', 'w') as f:
+          
+          # Combine everything
+          final_html = template.replace('{{STYLES}}', css).replace('{{CONTENT}}', html)
+          
+          # Write output
+          with open('index.html', 'w', encoding='utf-8') as f:
               f.write(final_html)
           "
           
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v2
