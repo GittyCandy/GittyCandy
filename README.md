@@ -26,7 +26,7 @@
   <img src="https://img.shields.io/badge/PRs-WELCOME-B362FF?style=for-the-badge" alt="PRs Welcome">
 </div>
 
-## 🌈 Tech Stack & Tools
+###
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=py" height="60" alt="python logo" style="filter: hue-rotate(0deg) saturate(2)" />
@@ -54,10 +54,8 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="60" alt="cplusplus logo" style="filter: hue-rotate(5deg) saturate(1.6)" />
 </div>
 
-### 📊 GitHub Stats
-
+###
 <div align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=GittyCandy&show_icons=true&theme=radical&hide_border=true&bg_color=00000000&title_color=7A3FF7&icon_color=FF6B6B&text_color=B362FF" />
   <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=GittyCandy&theme=radical&hide_border=true&background=00000000&stroke=B362FF&ring=7A3FF7&fire=FF6B6B&currStreakNum=B362FF&sideNums=7A3FF7&currStreakLabel=FF6B6B" />
 </div>
 
@@ -67,18 +65,15 @@
 
 ---
 
-### 📫 Let's Connect
+###
 <div align="center">
-  <a href="https://linkedin.com/in/yourprofile" target="_blank">
+  <a href="https://linkedin.com/in/ahsan-latif-tech" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-7A3FF7?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="https://twitter.com/yourhandle" target="_blank">
-    <img src="https://img.shields.io/badge/Twitter-FF6B6B?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
   </a>
   <a href="https://discord.gg/yourinvite" target="_blank">
     <img src="https://img.shields.io/badge/Discord-B362FF?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/>
   </a>
-  <a href="mailto:youremail@example.com">
+  <a href="mailto:ahsan.latif.tech@example.com">
     <img src="https://img.shields.io/badge/Gmail-7A3FF7?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
   </a>
 </div>
